@@ -3,6 +3,15 @@
 portals.setup(minetest.get_worldpath().."/portals.sqlite")
 local inspect = dofile(minetest.get_modpath('multinode')..'/inspect.lua')
 
+minetest.register_craft({
+        output = 'portals:generator',
+        recipe = {
+                {'moreores:tin_ingot','moreores:copper_ingot','moreores:tin_ingot'},
+                {'moreores:copper_ingot','mesecons_powerplant:power_plant','moreores:copper_ingot'},
+                {'moreores:tin_ingot','moreores:copper_ingot','moreores:tin_ingot'},
+             }
+     })
+
 minetest.register_node(
    "portals:generator", 
    {
